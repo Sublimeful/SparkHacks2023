@@ -7,6 +7,14 @@ export default function render() {
   // Load signup
   homepageForm.innerHTML = `
         <div class="form-group">
+          <label for="first-name">First Name:</label>
+          <input type="text" id="first-name" name="first-name" required />
+        </div>
+        <div class="form-group">
+          <label for="last-name">Last Name:</label>
+          <input type="text" id="last-name" name="last-name" required />
+        </div>
+        <div class="form-group">
           <label for="email">Email:</label>
           <input type="email" id="email" name="email" required />
         </div>

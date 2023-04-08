@@ -4,6 +4,8 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
+import { collection, addDoc } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCMmEfqXds7CvsIcyqqP_vlTl9pqX7r7IE",
@@ -17,6 +19,8 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+// Initialize Cloud Firestore and get a reference to the service
+const db = getFirestore(app);
 export let currentUser = null;
 
 export function register(email, password) {
@@ -43,4 +47,9 @@ export function login(email, password) {
         reject(error);
       });
   });
+}
+
+export async function addEvent(event) {
+  // Add a new document with a generated id.
+  await addDoc(collection(db, "events"), event);
 }

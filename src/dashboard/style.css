@@ -1,8 +1,0 @@
-#dashboard {
-  grid-area: dashboard;
-}
-
-#app {
-  display: grid;
-  grid-template: "sidenav dashboard";
-}
