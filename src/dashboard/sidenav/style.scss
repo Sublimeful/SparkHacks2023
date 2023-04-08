@@ -1,5 +1,6 @@
 #sidenav {
   height: 100%;
+  width: 200px;
   grid-area: sidenav;
 
   .sidenav {
@@ -12,9 +13,8 @@
       "sidenav-top"
       "sidenav-user"
       "sidenav-nav";
-    grid-template-rows: minmax(10px, 75px) repeat(2, minmax(10%, 33%));
+    grid-template-rows: minmax(10px, 75px) repeat(2, min-content);
     grid-auto-columns: 100%;
-    gap: 1rem;
   }
 
   .sidenav a {

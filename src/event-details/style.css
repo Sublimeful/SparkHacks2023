@@ -1,0 +1,72 @@
+.event-details-container {
+  max-width: 800px;
+  margin: 0 auto;
+  color: white;
+}
+
+.event-header {
+  display: flex;
+  flex-direction: column;
+}
+
+.event-header h1 {
+  margin-right: 20px;
+}
+
+.event-header img {
+  max-height: 500px;
+  object-fit: cover;
+}
+
+.organizer-info {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  font-size: 1.5rem;
+}
+
+.organizer-info img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.event-description {
+  margin-top: 20px;
+}
+
+.event-date-time {
+  margin-top: 20px;
+}
+
+.rsvp-button {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #4372eb;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.comment-form {
+  margin-top: 20px;
+}
+
+.comment-form textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.comment-form .submit-button {
+  padding: 10px;
+  background-color: #4372eb;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

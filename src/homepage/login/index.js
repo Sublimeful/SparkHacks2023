@@ -1,10 +1,12 @@
 import loadSignup from "/homepage/signup/index.js";
+import loadDashboard from "/dashboard/index.js";
+import { login } from "/firebase.js";
 
 export default function render() {
-  const hompageForm = document.getElementById("homepage-form");
+  const homepageForm = document.getElementById("homepage-form");
 
-  // Load signup
-  hompageForm.innerHTML = `
+  // Load login
+  homepageForm.innerHTML = `
         <label for="email">Email</label>
         <input
           type="email"
@@ -32,23 +34,32 @@ export default function render() {
         </p>
     `;
 
-  const loginBtn = document.getElementById("loginBtn");
-
-  loginBtn.addEventListener("click", (event) => {
-    event.preventDefault();
+  const submitLogin = async (event) => {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
-
     // Here, you would use your preferred authentication method to check the user's credentials and log them in
     // For example, you could use Firebase Authentication or your own server-side authentication logic
+    
+    // Error if fails to login, user credentials if succeeds
+    let res;
 
-    // For this example, we will simply show an alert with the user's email and password
-    alert(`Email: ${email}\nPassword: ${password}`);
-  });
+    try {
+      res = await login(email, password);
+      loadDashboard();
+    } catch (error) {
+      console.error("Invalid password!");
+    }
+
+    event.preventDefault();
+  };
+  homepageForm.addEventListener("submit", submitLogin);
 
   const signupLink = document.getElementById("signupLink");
 
   signupLink.addEventListener("click", () => {
+    // Detach login event listener
+    homepageForm.removeEventListener("submit", submitLogin);
+
     // Load signup
     loadSignup();
   });

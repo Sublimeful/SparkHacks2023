@@ -1,16 +1,11 @@
-export default function render() {
-  const hompageForm = document.getElementById("homepage-form");
+import { register } from "/firebase.js";
+import loadDashBoard from "/dashboard/index.js";
 
-  // Load login
-  hompageForm.innerHTML = `
-        <div class="form-group">
-          <label for="first-name">First Name:</label>
-          <input type="text" id="first-name" name="first-name" required />
-        </div>
-        <div class="form-group">
-          <label for="last-name">Last Name:</label>
-          <input type="text" id="last-name" name="last-name" required />
-        </div>
+export default function render() {
+  const homepageForm = document.getElementById("homepage-form");
+
+  // Load signup
+  homepageForm.innerHTML = `
         <div class="form-group">
           <label for="email">Email:</label>
           <input type="email" id="email" name="email" required />
@@ -19,6 +14,22 @@ export default function render() {
           <label for="password">Password:</label>
           <input type="password" id="password" name="password" required />
         </div>
-        <button type="submit">Register</button>    
+        <button id="register-btn" type="submit">Register</button>    
 `;
+
+  homepageForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const email = document.querySelector("#email").value;
+    const password = document.querySelector("#password").value;
+
+    // Error if fails to sign up, user credentials if succeeds
+    let res;
+
+    try {
+      res = await register(email, password);
+      loadDashBoard();
+    } catch (error) {
+      console.error("Error in registration!");
+    }
+  });
 }

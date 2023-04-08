@@ -5,16 +5,16 @@ import iconSVG from "./assets/logo.svg";
 import loadHomepage from "/homepage/index.js";
 
 function render(html) {
-  sidenav.innerHTML = html;
+  topnav.innerHTML = html;
 }
 
 export default function loadPage() {
-  const sidenav = document.querySelector("#sidenav");
+  const topnav = document.querySelector("#topnav");
 
   render(`
         <nav>
             <div class="logo">
-                <img src="logo.png" alt="Logo">
+                <img src="${iconSVG}" alt="Logo">
                 <span>Ligma</span>
             </div>
             <div class="page-title">
