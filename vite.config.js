@@ -10,8 +10,7 @@ export default defineConfig({
     outDir,
     emptyOutDir: true,
     rollupOptions: {
-      input: {
-      },
+      input: {},
     },
   },
 });

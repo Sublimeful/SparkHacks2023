@@ -1,0 +1,42 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: #555555;
+  color: white;
+  height: 12%;
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  margin-left: 2%;
+}
+
+.logo img,
+.user-profile img {
+  aspect-ratio: 1/1;
+  height: 80%;
+  border-radius: 50%;
+  margin-top: 3%;
+  margin-left: 5%;
+  background-color: white;
+  cursor: pointer;
+}
+
+.logo span {
+  color: white;
+  font-size: 2.5rem;
+  margin-top: 3%;
+  margin-left: 5%;
+}
+
+.user-profile {
+  display: flex;
+  flex-direction: row;
+  margin-right: 2%;
+  margin-top: 10px;
+}
+
+.page-title {
+  width: 20%;
+}

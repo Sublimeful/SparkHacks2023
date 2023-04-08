@@ -1,4 +1,5 @@
 import "./style.css";
+import loadSideNav from "./sidenav/index.js";
 
 const app = document.querySelector("#app");
 
@@ -8,8 +9,11 @@ function render(html) {
 
 export default function loadPage() {
   render(`
-        <div class="sidenav">
+        <div id="sidenav"></div>
+        <div id="dashboard">
             Hello Dashboard! Your Mom
         </div>
     `);
+
+  loadSideNav();
 }

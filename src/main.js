@@ -1,4 +1,5 @@
 import "./style.css";
-import loadSidenav from "./sidenav/index.js";
 
-loadSidenav();
+import loadHomepage from "/homepage/index.js";
+
+loadHomepage();

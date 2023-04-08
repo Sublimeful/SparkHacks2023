@@ -1,21 +1,19 @@
 import "./style.css";
+import logoSVG from "/homepage/assets/icon.svg";
+import loadLogin from "/homepage/login/index.js";
 
-import iconSVG from "./assets/icon.svg";
+export default function render() {
+  document.getElementById("app").innerHTML = `
+    <div class="container">
+      <div class="logo">
+        <img src=${logoSVG} alt="Ligma Logo"></img>
+      </div>
+      <h1>Ligma</h1>
+      <h2>Improved Eventing</h2>
+      <form id="homepage-form"></form>
+    </div>
+  `;
 
-const app = document.querySelector("#app");
-
-function render(html) {
-  app.innerHTML = html;
-}
-
-export default function loadPage() {
-  render(`
-        <div class="homepage">
-          <div class="logo"><img src="${iconSVG}" /></div>
-            <div class="slogan">
-              <h1>Improved Eventing</h1>
-            </div>
-          <div class="register"></div>
-        </div>
-    `);
+  // Load login first
+  loadLogin();
 }

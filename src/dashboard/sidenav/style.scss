@@ -1,0 +1,87 @@
+#sidenav {
+  height: 100%;
+  grid-area: sidenav;
+
+  .sidenav {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    background-color: #555555;
+    display: grid;
+    grid-template:
+      "sidenav-top"
+      "sidenav-user"
+      "sidenav-nav";
+    grid-template-rows: minmax(10px, 75px) repeat(2, minmax(10%, 33%));
+    grid-auto-columns: 100%;
+    gap: 1rem;
+  }
+
+  .sidenav a {
+    font-size: 18px;
+    color: #ffffff;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+  }
+
+  .sidenav a:hover {
+    background-color: #838383;
+    border-radius: 8px;
+  }
+
+  .sidenav i {
+    margin-right: 10px;
+  }
+
+  .top {
+    grid-area: sidenav-top;
+    display: grid;
+    grid-template: "top-logo top-span";
+    border-bottom: 3px solid #a5a5a5;
+    grid-template-rows: 100%;
+    grid-template-columns: 30% auto;
+    align-items: center;
+    gap: 10px;
+    padding: 1rem;
+  }
+
+  .top .logo {
+    grid-area: top-logo;
+    border-radius: 50%;
+    background-color: white;
+    display: block;
+    height: 50px;
+    width: 50px;
+  }
+
+  .top .logo img {
+    display: block;
+    aspect-ratio: 1/1;
+    height: 100%;
+  }
+
+  .top span {
+    grid-area: top-span;
+    color: white;
+  }
+
+  .user {
+    grid-area: sidenav-user;
+    border-bottom: 3px solid #a5a5a5;
+  }
+
+  .nav {
+    grid-area: sidenav-nav;
+  }
+
+  li {
+    margin: 1rem;
+    list-style-type: none;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+}
