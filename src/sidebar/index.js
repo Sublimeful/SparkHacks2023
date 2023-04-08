@@ -3,7 +3,6 @@ import iconSVG from "./assets/icon.svg";
 
 const sidebar = document.querySelector("#sidebar");
 
-import loadDashboard from "/dashboard/index.js";
 import loadHomepage from "/homepage/index.js";
 
 function render(html) {

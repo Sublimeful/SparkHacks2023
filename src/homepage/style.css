@@ -1,0 +1,26 @@
+.homepage {
+  background-color: #938aff;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+
+  display: grid;
+  grid-template:
+    "homepage-logo"
+    "homepage-slogan"
+    "homepage-register";
+
+  grid-template-rows: 4fr 2fr 2fr;
+}
+
+.homepage .logo {
+  grid-area: homepage-logo;
+}
+
+.homepage .slogan {
+  grid-area: homepage-slogan;
+}
+
+.homepage .register {
+  grid-area: homepage-register;
+}

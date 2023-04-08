@@ -1,4 +1,4 @@
 import "./style.css";
-import loadSidebar from "./sidebar/index.js";
+import loadSidenav from "./sidenav/index.js";
 
-loadSidebar();
+loadSidenav();
