@@ -1,4 +1,4 @@
 import "./style.css";
-import loadDashboard from "./dashboard/index.js";
+import loadSidebar from "./sidebar/index.js";
 
-loadDashboard();
+loadSidebar();

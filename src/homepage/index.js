@@ -7,7 +7,6 @@ function render(html) {
 }
 
 export default function loadPage() {
-  console.log("HELLO");
   render(`
         <div>
             Hello Homepage!
