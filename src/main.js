@@ -1,10 +1,4 @@
-import './style.css'
+import "./style.css";
+import loadDashboard from "./dashboard/index.js";
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    
-
-
-
-  </div>
-`
+loadDashboard();
